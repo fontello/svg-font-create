@@ -4,7 +4,6 @@
 
 var fs        = require('fs');
 var path      = require('path');
-var os        = require('os');
 var _         = require('lodash');
 var yaml      = require('js-yaml');
 var DOMParser = require('xmldom').DOMParser;
@@ -113,6 +112,7 @@ var parser = new ArgumentParser({
 parser.addArgument([ '-c', '--config' ], { help: 'Font config file', required: true });
 parser.addArgument([ '-i', '--input_dir' ], { help: 'Source images path', required: true });
 parser.addArgument([ '-o', '--output' ], { help: 'Output font file path', required: true });
+parser.addArgument([ '-s', '--svgo_config' ], { help: 'SVGO config path (use default if not set)' });
 
 var args = parser.parseArgs();
 
@@ -128,8 +128,8 @@ try {
   process.exit(1);
 }
 
-tmpDir = path.resolve('./tmp');
-//tmpDir = fstools.tmpdir();
+//tmpDir = path.resolve('./tmp');
+tmpDir = fstools.tmpdir();
 fstools.mkdirSync(tmpDir);
 
 var font = config.font;
@@ -167,9 +167,11 @@ fstools.walkSync(args.input_dir, /[.]svg$/i, function (file) {
 
 console.log('Optimizing images');
 
+var svgoConfig = args.svgo_config ? path.resolve(args.svgo_config) : path.resolve(__dirname, 'svgo.yml');
+
 execFile(
   path.resolve(process.cwd(), './node_modules/.bin/svgo'),
-  [ '-f', tmpDir, '--config', path.resolve(__dirname, 'svgo.yml') ],
+  [ '-f', tmpDir, '--config', svgoConfig ],
   function (err) {
 
   if (err) {
