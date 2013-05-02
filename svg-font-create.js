@@ -169,7 +169,7 @@ console.log('Optimizing images');
 
 execFile(
   path.resolve(process.cwd(), './node_modules/.bin/svgo'),
-  [ '-f', tmpDir, '--config', path.resolve('svgo.yml') ],
+  [ '-f', tmpDir, '--config', path.resolve(__dirname, 'svgo.yml') ],
   function (err) {
 
   if (err) {
