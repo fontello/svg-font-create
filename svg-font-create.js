@@ -75,7 +75,7 @@ var svgFontTemplate = _.template(
 
     '<font-face' +
       ' font-family="<%= fontFamily %>"' +
-      ' font-weight="<%= fontWeight %>"' +
+      ' font-weight="400"' +
       ' font-stretch="normal"' +
       ' units-per-em="<%= fontHeight %>"' +
       //panose-1="2 0 5 3 0 0 0 0 0 0"
