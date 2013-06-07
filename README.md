@@ -15,6 +15,10 @@ Installation:
 npm install svg-font-create
 ```
 
+Usage example:
+
+See Makefile in embedded fonts repos https://github.com/fontello/awesome-uni.font/blob/master/Makefile
+
 License
 -------
 View the [LICENSE](https://github.com/fontello/svg-font-create/blob/master/LICENSE) file
