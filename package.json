@@ -1,19 +1,24 @@
 {
-  "name"            : "svg-font-create",
-  "description"     : "Creates SVG font from separate images",
-  "keywords"        : [ "font", "svg" ],
-  "version"         : "0.0.5",
-  "repository"      : {
-                        "type": "git",
-                        "url" : "git@github.com:fontello/svg-font-create.git"
-                      },
-  "bin"             : { "svg-font-create": "svg-font-create.js" },
-  "dependencies"    : {
-                        "argparse"          : "~ 0.1.7",
-                        "fs-tools"          : "~ 0.2.6",
-                        "js-yaml"           : "~ 2.0.5",
-                        "lodash"            : "~ 1.2.1",
-                        "xmldom"            : "~ 0.1.5",
-                        "svgo"              : "~ 0.3.2"
-                      }
+  "name": "svg-font-create",
+  "description": "Creates SVG font from separate images",
+  "keywords": [
+    "font",
+    "svg"
+  ],
+  "version": "0.0.5",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fontello/svg-font-create.git"
+  },
+  "bin": {
+    "svg-font-create": "svg-font-create.js"
+  },
+  "dependencies": {
+    "argparse": "~ 0.1.7",
+    "fs-tools": "~ 0.2.6",
+    "js-yaml": "~ 2.0.5",
+    "lodash": "~ 4.17.5",
+    "xmldom": "~ 0.1.5",
+    "svgo": "~ 0.3.2"
+  }
 }
